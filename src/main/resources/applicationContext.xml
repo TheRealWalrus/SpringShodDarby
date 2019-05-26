@@ -8,7 +8,12 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <bean id="myCoach" class="springdemo.RandomCoach"/>
+    <bean id="myFortune" class="springdemo.HappyFortuneService" />
+    <bean id="myRandomCoach" class="springdemo.RandomCoach">
+        <property name="fortuneService" ref="myFortune" />
+        <property name="emailAddress" value="feraraj@gmail.com" />
+        <property name="team" value="Algebra Annihilators" />
+    </bean>
 
 </beans>
 
